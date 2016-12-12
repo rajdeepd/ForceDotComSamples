@@ -1,0 +1,44 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="GLOBAL" controller="BattleStationUtil">
+     <aura:handler event="c:StationClickEvent" action="{!c.showStation}"/>
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.saveSuccess}"/>
+        
+    <aura:attribute type="Battle_Station__c" name="station" access="global" default="{'sobjectType':'Battle_Station__c'}"/>
+    <aura:attribute type="Boolean" name="editView" default="false"/>
+    <aura:attribute type="Boolean" name="createView" default="false"/>
+    <aura:attribute type="Boolean" name="detailView" default="false"/>
+        
+    <aura:if isTrue="{! v.createView }">
+        <div class="slds-align--absolute-center">
+            <ui:button aura:id="save" label="Save" press="{!c.insertStation}"/>
+            <ui:button aura:id="cancel" label="Cancel" press="{!c.cancelCreate}"/>
+        </div>
+        <ui:inputText label="Battle Station name" value="{!v.station.Name}" required="true"/>
+        <ui:inputSelect label="Project Status" value="{!v.station.Project_Status__c}" required="true">
+            <ui:inputSelectOption text="Green" label="Green"/>
+            <ui:inputSelectOption text="Yellow" label="Yellow" />
+            <ui:inputSelectOption text="Red" label="Red"/>
+            <ui:inputSelectOption text="Complete" label="Complete"/>
+        </ui:inputSelect>
+        <ui:inputSelect label="Weapons Status" value="{!v.station.Weapons_Status__c}" required="true">
+            <ui:inputSelectOption text="Not Yet Operational" label="Not Yet Operational"/>
+            <ui:inputSelectOption text="Fully Operational" label="Fully Operational"/>
+        </ui:inputSelect>
+    </aura:if>
+        
+    <aura:if isTrue="{! v.detailView }">
+        <div class="slds-align--absolute-center">
+            <ui:button aura:id="edit" label="Edit" press="{!c.makeEdit}"/>
+            <ui:button aura:id="delete" label="Delete" press="{!c.removeStation}"/>
+        </div>
+        <force:recordView aura:id="record" recordId="{!v.station.Id}"/>
+    </aura:if>
+        
+    <aura:if isTrue="{! v.editView }">
+        <div class="slds-align--absolute-center">
+            <ui:button aura:id="save" label="Save" press="{!c.saveStation}"/>
+            <ui:button aura:id="cancel" label="Cancel" press="{!c.cancelEdit}"/>
+        </div>
+        <force:recordEdit aura:id="recedit" recordId="{!v.station.Id}"/>
+    </aura:if>
+        
+</aura:component>

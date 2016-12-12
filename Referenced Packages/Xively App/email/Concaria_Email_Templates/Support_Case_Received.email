@@ -1,0 +1,11 @@
+Dear {!Contact.FirstName},
+
+Thank you for submitting your issue. Our Customer Support team will respond to you within 8 business hours. Please find information related to your inquiry below:
+
+Case Number: {!Case.CaseNumber}
+Case Description: {!Case.Description}
+
+Thank you,
+
+{!User.Name}
+{!Organization.Name}

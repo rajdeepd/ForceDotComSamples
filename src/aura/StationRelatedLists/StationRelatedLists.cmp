@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    
+    <aura:attribute name="station" type="Battle_Station__c"/>
+    <aura:attribute name="show" type="Boolean" />
+        
+    <aura:if isTrue="{!v.show}">
+        <div class="slds-tabs--scoped">
+          <ul class="slds-tabs--scoped__nav" role="tablist">
+            <li aura:id="tab1" onclick="{!c.switchTab}" class="slds-tabs--scoped__item slds-text-heading--label slds-active" title="Resources" role="presentation"><a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-scoped-1" id="tab-scoped-1__item">Resources</a></li>
+            <li aura:id="tab2" onclick="{!c.switchTab}" class="slds-tabs--scoped__item slds-text-heading--label " title="Supplies" role="presentation"><a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-2" id="tab-scoped-2__item">Supplies</a></li>
+          </ul>
+          <div aura:id="content1" id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+              <c:ResourceList station="{!v.station}"/>
+          </div>
+          <div aura:id="content2" id="tab-scoped-2" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-2__item">
+              <c:SupplyList station="{!v.station}"/>
+          </div>
+        </div>
+    </aura:if> 
+        
+</aura:component>

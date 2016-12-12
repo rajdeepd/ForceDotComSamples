@@ -1,0 +1,13 @@
+<aura:component controller="SimpleServerSideController">
+  <aura:attribute name="firstName" type="String" default="world"/>
+  <div class="parent">
+  <ui:button label="Call server" press="{!c.echo}"/>
+  </div>
+  <div class="pink">
+  <p>State:</p>
+  <ui:outputText aura:id="status" value="" class="text"/>
+  </div>
+  <div class="pink">
+  <ui:outputText aura:id="outName" value="" class="text"/>
+  </div>
+</aura:component>

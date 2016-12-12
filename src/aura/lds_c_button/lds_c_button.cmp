@@ -1,0 +1,25 @@
+<aura:component >
+	<div class="slds">
+        <div class="mydiv">
+        <div class="slds-text-heading--large">Buttons</div>
+        <div class="slds-text-heading--medium">Base</div>
+        <br/>
+        <button class="slds-button">Button</button>
+        <div class="slds-text-body--small">The base <b>.slds-button</b> looks like a plain text link. 
+        It removes all the styling of the native button. It’s typically used to trigger a
+        modal or display a “like” link. 
+        All button variations are built by adding another class to <b>.slds-button</b>.
+        </div>
+        <br/><br/>
+        <div class="slds-text-heading--medium">Neutral</div>
+        <br/>
+        <div class="slds-text-body--small">Add the <b>.slds-button--neutral</b> class to create a neutral button, 
+            which has a white background and gray border.
+        </div>
+        <br/>
+        <button class="slds-button slds-button--neutral">Button neutral</button><a href="#" class="slds-button slds-button--neutral">Anchor Button Neutral</a>
+        <button class="slds-button slds-button--neutral" disabled="">Disabled</button>
+        <button class="slds-button slds-button--neutral slds-button--small">Button Small</button>
+        </div>
+    </div>
+</aura:component>

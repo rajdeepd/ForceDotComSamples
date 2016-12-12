@@ -1,0 +1,12 @@
+.THIS {
+    background-color: white;
+	margin-left:10px;
+    margin-top:10px;
+    border-style: solid;
+    border-width: 0px;
+    padding: 10px
+}
+.THIS .blue {
+	background-color: #CBE1FC;
+    padding: 5px
+}

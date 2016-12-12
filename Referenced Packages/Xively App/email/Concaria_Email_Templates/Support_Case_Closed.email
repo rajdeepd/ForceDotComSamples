@@ -1,0 +1,13 @@
+Dear {!Contact.FirstName},
+
+Our Customer Service team has resolved your issue. Please find information related to your Case resolution below:
+
+Case Number: {!Case.CaseNumber}
+Case Description: {!Case.Description}
+Case Resolution: {!Case.Solution_Description}
+Status: {!Case.Status}
+
+Thank you,
+
+{!User.Name}
+{!Organization.Name}

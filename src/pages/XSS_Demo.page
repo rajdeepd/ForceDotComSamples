@@ -1,0 +1,24 @@
+<apex:page controller="XSS_Demo" sidebar="false" >
+   <h1>
+       XSS Demo
+   </h1>
+    <br/>
+   <apex:form >
+   <apex:pageBlock >
+   <apex:pageBlockSection columns="1" id="tableBlock">
+       <apex:outputPanel >
+            Insert the text you wish to make pretty: <apex:inputText id="primeInput" value="{!basicText}"/><br/>
+            <apex:commandButton action="{!makePretty}" value="Make Pretty!" />
+       </apex:outputPanel>
+       <apex:outputPanel >
+            Pretty Text:<br/><br/>
+            <apex:outputtext id="textOutput"/> 
+       </apex:outputPanel>
+       <script>
+            document.getElementById('{!$Component.textOutput}').innerHTML = 
+                '<b><font size="6" face="Comic Sans MS" color="blue"><i>{!basicText}<i></font></p>';
+       </script> 
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

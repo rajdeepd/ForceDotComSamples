@@ -1,0 +1,29 @@
+<aura:component >
+	<div class="slds">
+        <div class="mydiv">
+            <div class="slds-text-heading--large">Breadcrumbs</div>
+                <div class="slds-text-body--small">Use breadcrumbs to note the path of a record and help the user to navigate back 
+                   to the parent. Breadcrumbs are typically constructed with an ol because their order matters. You mark up breadcrumbs with classes from the horizontal list utility. 
+                    When you add the <b>.slds-breadcrumb</b> class, the separators are automatically 
+                    generated.
+                </div>
+               <br/>
+               <nav role="navigation">
+                  <p id="bread-crumb-label" class="slds-assistive-text">You are here:</p>
+                  <ol class="slds-breadcrumb slds-list--horizontal" aria-labelledby="bread-crumb-label">
+                    <li class="slds-list__item slds-text-heading--label"><a href="#">Parent Entity</a></li>
+                    <li class="slds-list__item slds-text-heading--label"><a href="#">Parent Record Name</a></li>
+                  </ol>
+                </nav>
+                <br/>
+                 <![CDATA[<nav role="navigation">]]><br/>
+                  <![CDATA[<p id="bread-crumb-label" class="slds-assistive-text">You are here:</p>]]>
+                  <br/>
+                  <![CDATA[<ol class="slds-breadcrumb slds-list--horizontal" aria-labelledby="bread-crumb-label">]]><br/>
+                  <![CDATA[<li class="slds-list__item slds-text-heading--label"><a href="#">Parent Entity</a></li>]]><br/>
+                    <![CDATA[<li class="slds-list__item slds-text-heading--label"><a href="#">Parent Record Name</a></li>]]><br/>
+                  <![CDATA[</ol>]]><br/>
+                <![CDATA[</nav>]]><br/>
+        </div>
+    </div>
+</aura:component>

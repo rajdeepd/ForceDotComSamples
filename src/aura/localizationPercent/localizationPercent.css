@@ -1,0 +1,16 @@
+.THIS {
+    background-color: #CBE1FC;
+	margin-left:10px;
+    margin-top:10px;
+    border-style: solid;
+    border-width: 0px;
+    padding: 10px;
+    width:200px
+}
+.THIS .blue {
+	background-color: #CBE1FC;
+    padding: 0px;
+    margin-left:10px;
+    margin-top:10px;
+    width:200px
+}

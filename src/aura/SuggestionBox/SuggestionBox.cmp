@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+   <div class="slds-grid">
+      <div class="slds-col">
+         <c:SuggestionBoxCreate />
+         <c:SearchBar />
+      </div>
+   </div>
+   <div class="slds-grid slds-grid--pull-padded">
+      <div class="slds-col--padded">
+         <c:SuggestionList />
+      </div>
+      <div class="slds-col--padded">
+         <c:SuggestionDetails />
+      </div>
+   </div>
+</aura:component>

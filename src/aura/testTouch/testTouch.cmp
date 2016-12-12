@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<!-- apphostable to be able to expose component as custom lightning tab -->
+    <div aura:id="container">
+        <div style="background:red; width:400px; height: 1000px;"></div>
+    </div>
+</aura:component>

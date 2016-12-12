@@ -1,0 +1,4 @@
+<apex:page standardController="Contact">
+    <h1>Hello World</h1><br/>
+    <apex:outputField value="{!Contact.email}"/>
+</apex:page>

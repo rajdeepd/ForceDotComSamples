@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	
+    <aura:attribute name="percent" type="string" />
+    <div>
+   <ui:outputText value="format=&quot;0.00%&quot; : " />
+    
+    <ui:outputNumber aura:id="1" value="{!v.percent}" format="00.00%"/>
+    </div>
+    <div>
+    <ui:outputText value="format=&quot;%0.00&quot; : " />
+    <ui:outputNumber aura:id="2" value="{!v.percent}" format="%00.00"/>
+    </div>
+    
+</aura:component>

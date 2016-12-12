@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BattleStationUtil">
+  <aura:registerEvent name="showStation" type="c:StationClickEvent"/>
+    <aura:attribute name="station" type="Battle_Station__c"/>
+    <aura:attribute name="resources" type="Resource__c[]"/>
+    <aura:attribute name="newResource" type="Resource__c" default="{'sobjectType':'Resource__c'}"/>
+    <aura:attribute name="createView" type="Boolean"/>
+        
+    <aura:handler name="init" value="{!this}" action="{!c.loadResources}"/>
+    <aura:handler name="change" value="{!v.station}" action="{!c.loadResources}"/>
+        
+    <ui:button aura:id="new" label="Create New" press="{!c.createView}"/>
+    <aura:if isTrue="{!v.createView}">
+        <ui:inputText label="Resource name:" value="{!v.newResource.Name}" required="true"/>
+        <ui:inputText label="Quantity:" value="{!v.newResource.Quantity__c}" required="true"/>
+        <ui:inputText label="Utilization: %" value="{!v.newResource.Utilization__c}" required="true"/>
+        <ui:button label="Save" press="{!c.createResource}"/>
+        <ui:button label="Cancel" press="{!c.cancelSave}"/>
+    </aura:if>
+    <ul class="slds-has-dividers--around-space">
+        <aura:iteration items="{!v.resources}" var="resource">
+        <li class="slds-item">
+            <div class="slds-tile slds-tile--board">
+                <h3 class="slds-truncate slds-text-heading--medium" title="Anypoint Connectors"><a href="javascript:void(0);">{!resource.Name}</a></h3>
+                <div class="slds-tile__detail slds-text-body--small">
+                    <p class="slds-text-heading--medium">Quantity: {!resource.Quantity__c}</p>
+                    <p class="slds-truncate">Utilization: {!resource.Utilization__c}%</p>
+                </div>
+            </div>
+        </li>
+        </aura:iteration>
+    </ul>
+
+</aura:component>

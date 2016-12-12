@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="GLOBAL">
+    <aura:registerEvent name="showStation" type="c:StationClickEvent"/>
+    <aura:attribute name="stationItem" type="Battle_Station__c" access="global"/>
+        
+    <tr >
+      <th scope="row" data-label="Battle Station Name" >
+        <div class="slds-truncate"><a href="javascript:void(0);"><p onclick="{!c.loadDetail}">{!v.stationItem.Name}</p></a></div>
+      </th>
+      <td data-label="Project Status">
+        <div class="slds-truncate">{!v.stationItem.Project_Status__c}</div>
+      </td>
+      <td data-label="Weapons Status">
+        <div class="slds-truncate">{!v.stationItem.Weapons_Status__c}</div>
+      </td>
+    </tr>
+        
+</aura:component>

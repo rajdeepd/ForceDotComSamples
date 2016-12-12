@@ -1,0 +1,19 @@
+<apex:page sidebar="false" standardController="Account">
+ <apex:pageBlock title="Account Summary">
+    <apex:pageBlockSection >
+       <!--<p>Name: {! Account.name }</p>
+       <p>Account owner: {! Account.Owner.Name }</p>
+       <p>Phone: {! Account.Phone } </p>
+       <p>Industry: {! Account.Industry } </p>
+       <p>Revenue: {! Account.AnnualRevenue } </p>
+       <apex:detail relatedList="false"/> -->
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+  <apex:pageBlock title="Contacts">
+   <apex:pageBlockTable value="{!Account.contacts}" var="contact">
+      <apex:column value="{!contact.Name}"/>
+      <apex:column value="{!contact.Title}"/>
+      <apex:column value="{!contact.Phone}"/>
+   </apex:pageBlockTable>
+</apex:pageBlock>
+ </apex:page>

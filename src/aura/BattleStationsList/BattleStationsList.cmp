@@ -1,0 +1,36 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BattleStationUtil">
+    <aura:registerEvent name="showStation" type="c:StationClickEvent"/>
+    <aura:handler event="c.updatedListEvent" action="{!c.loadStations}"/>
+    <aura:attribute name="stations" type="Battle_Station__c[]"/>
+        
+    <aura:handler name="init" value="{!this}" action="{!c.loadStations}"/>
+        
+    <div class="slds-align--absolute-center">
+        <p class="slds-text-heading--label">Click any Battle Station to view or edit details</p>
+    </div>
+    <div class="slds-align--absolute-center">
+        <ui:button aura:id="new" label="Create new Battle Station" press="{!c.loadNew}"/>
+        <br/>
+    </div>
+    <table class="myClass slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-heading--label">
+                <th scope="col">
+                    <div class="slds-truncate" title="Battle Station Name">Battle Station Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Project Status">Project Status</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Weapons Status">Weapons Status</div>
+                </th>         
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.stations}" var="station">
+              <c:BattleStationItem stationItem="{!station}"/>
+            </aura:iteration>
+        </tbody>
+    </table>
+        
+</aura:component>

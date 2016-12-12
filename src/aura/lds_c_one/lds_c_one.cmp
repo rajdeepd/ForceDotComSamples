@@ -1,0 +1,18 @@
+<aura:component >
+    <div class="slds">
+        <div style="margin-left:45px;margin-top:45px;">
+            <div class="slds-text-heading--large">Badges</div>
+                <p>To render a badge, add the <b>.slds-badge</b> class to a span element.</p>
+                <br/>
+                <span class="slds-badge">Label</span>
+                <span class="slds-badge slds-theme--default">Label</span>
+                <span class="slds-badge slds-theme--shade">Label</span>
+                <span class="slds-badge slds-theme--inverse">Label</span>
+            	<br/><br/>
+                <![CDATA[<span class="slds-badge">Label</span> ]]><br/>
+                <![CDATA[<span class="slds-badge slds-theme--default">Label</span> ]]><br/>
+                <![CDATA[<span class="slds-badge slds-theme--shade">Label</span> ]]> <br/>
+                <![CDATA[<span class="slds-badge slds-theme--inverse">Label</span> ]]> <br/>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,34 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BattleStationUtil">
+    
+    <aura:attribute name="station" type="Battle_Station__c"/>
+    <aura:attribute name="supplies" type="Supply__c[]"/>
+    <aura:attribute name="newSupply" type="Supply__c" default="{'sobjectType':'Supply__c'}"/>
+    <aura:attribute name="createView" type="Boolean"/>
+        
+    <aura:handler name="init" value="{!this}" action="{!c.loadSupplies}"/>
+    <aura:handler name="change" value="{!v.station}" action="{!c.loadSupplies}"/>
+        
+    <ui:button aura:id="new" label="Create New" press="{!c.createView}"/>
+    <aura:if isTrue="{!v.createView}">
+        <ui:inputText label="Supply name:" value="{!v.newSupply.Name}" required="true"/>
+        <ui:inputText label="Unit Cost: $" value="{!v.newSupply.Unit_Cost__c}" required="true"/>
+        <ui:inputText label="Quantity:" value="{!v.newSupply.Quantity__c}" required="true"/>
+        <ui:button label="Save" press="{!c.createSupply}"/>
+        <ui:button label="Cancel" press="{!c.cancelSave}"/>
+    </aura:if>
+    <ul class="slds-has-dividers--around-space">
+        <aura:iteration items="{!v.supplies}" var="supply">
+        <li class="slds-item">
+            <div class="slds-tile slds-tile--board">
+                <h3 class="slds-truncate slds-text-heading--medium" title="Anypoint Connectors"><a href="javascript:void(0);">{!supply.Name}</a></h3>
+                <div class="slds-tile__detail slds-text-body--small">
+                    <p class="slds-text-heading--medium">Quantity: {!supply.Quantity__c}</p>
+                    <p class="slds-truncate">Unit Cost:  ${!supply.Unit_Cost__c}</p>
+                    <p class="slds-truncate">Total Cost: ${!supply.Total_Cost__c}</p>
+                </div>
+            </div>
+        </li>
+        </aura:iteration>
+    </ul>
+
+</aura:component>
